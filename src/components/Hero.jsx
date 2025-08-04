@@ -1,9 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
   const titleRef = useRef(null);
   const imageRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     gsap.fromTo(
@@ -29,7 +31,7 @@ const Hero = () => {
             <p>
               Experience smooth, professional animations that bring your web projects to life with stunning visual effects.
             </p>
-            <button className="btn">
+            <button className="btn" onClick={() => navigate('/explore')}>
               Explore Animations
             </button>
           </div>
